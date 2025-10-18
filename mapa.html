@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img class="logo" src="logo.png" alt="Logo" />
+      <div class="links">
+        <a href="index.html">Login</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="detalle.html">Detalle</a>
+        <a href="escanear.html">Escanear</a>
+        <a href="mapa.html" class="active">Mapa</a>
+        <a href="perfil.html" class="active">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="centered-content">
+      <h2>Buscar coordenadas</h2>
+      <input id="coords" placeholder="Ingresa las coordenadas..." class="max-w-md w-full" />
+      <div id="map"></div>
+    </div>
+  </main>
+
+  <!-- Demo mínima con Leaflet (opcional si ya tienes tu mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const mapEl = document.getElementById('map');
+    const map = L.map(mapEl).setView([-12.0464, -77.0428], 12); // Lima por defecto
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const input = document.getElementById('coords');
+    input?.addEventListener('change', () => {
+      const v = (input.value || "").trim();
+      const m = v.match(/(-?\d+(\.\d+)?)[ ,]+(-?\d+(\.\d+)?)/);
+      if (!m) { alert('Usa formato "lat, lng"'); return; }
+      const lat = parseFloat(m[1]); const lng = parseFloat(m[3]);
+      map.setView([lat,lng], 15);
+      L.marker([lat,lng]).addTo(map);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restablece tu contraseña</title>
+  <!-- Reusa tu style.css global -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Estilos específicos de esta pantalla -->
+  <link rel="stylesheet" href="restablecer.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img class="logo" src="logo.png" alt="Logo" />
+      <div class="links">
+        <a href="index.html">Login</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="detalle.html">Detalle</a>
+        <a href="escanear.html">Escanear</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="perfil.html">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="reset-card">
+      <h1 class="reset-title">RESTABLECE TU<br/>CONTRASEÑA</h1>
+      <p class="reset-copy">
+        La información de recuperación de contraseña se enviará al correo registrado.
+      </p>
+
+      <form id="resetForm" class="reset-form" novalidate>
+        <div class="form-group">
+          <label class="label" for="resetUser">Usuario</label>
+          <input
+            class="input"
+            id="resetUser"
+            name="usuario"
+            type="text"
+            placeholder="Ingresa tu usuario"
+            autocomplete="username"
+            required
+          />
+        </div>
+
+        <!-- Botón flotante circular -->
+        <button id="resetSend" class="reset-fab" type="submit" aria-label="Enviar solicitud de restablecimiento">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="26" height="26">
+            <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script src="restablecer.js"

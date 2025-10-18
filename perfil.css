@@ -1,0 +1,37 @@
+
+.profile{width:100%; background:#141024; border-radius:22px; box-shadow:0 0 24px rgba(130,86,255,.18); overflow:hidden}
+.profile-head{position:relative; padding-top:52px; padding-bottom:22px; text-align:center}
+.profile-brand-strip{height:64px; background:#2a1d4a}
+.profile-title{margin:12px 0 8px}
+.profile-avatar-wrap{position:absolute; inset:0; top:28px; display:grid; place-items:center; pointer-events:none}
+.profile-avatar{
+  width:132px; height:132px; border-radius:999px; object-fit:cover;
+  border:6px solid #2a1d4a; background:#1a142b;
+  box-shadow:0 6px 24px rgba(0,0,0,.35)
+}
+.profile-name{font-weight:700; font-size:clamp(16px,3.6vw,20px); color:#e5ddff; margin-top:40px}
+
+.profile-actions{display:flex; flex-direction:column; gap:14px; padding:18px 16px 24px}
+.profile-item{
+  display:flex; align-items:center; gap:14px; padding:14px;
+  background:#0e0b17; border:1px solid rgba(208,179,255,.12);
+  border-radius:14px; text-decoration:none; color:#e5ddff;
+  transition:transform .05s ease, filter .18s ease, background .18s ease
+}
+.profile-item:hover{filter:brightness(1.04); background:#130f21}
+.profile-item:active{transform:translateY(1px)}
+.profile-item--danger{background:#160e1b; border-color:rgba(255,77,109,.25)}
+.profile-item--danger:hover{filter:brightness(1.04); background:#1b1221}
+
+.profile-icon{
+  flex:0 0 44px; height:44px; display:grid; place-items:center;
+  border-radius:12px; background:#6c52d9; color:white
+}
+.profile-icon svg{width:22px; height:22px; fill:currentColor}
+
+.profile-text{font-weight:600}
+
+@media (min-width: 840px){
+  .profile{padding-bottom:8px}
+  .profile-actions{padding:22px 24px 28px}
+}

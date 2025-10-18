@@ -1,0 +1,49 @@
+/* Usa las mismas variables de color que ya manejas en style.css */
+
+.reset-card{
+  width:min(720px, 92vw);
+  background:#0c0916;           /* sobre tu fondo oscuro */
+  padding:24px 16px 110px;      /* deja espacio para el fab */
+  border-radius:16px;
+}
+
+.reset-title{
+  font-weight:800;
+  font-size:clamp(26px, 5vw, 42px);
+  line-height:1.1;
+  margin:0 0 16px;
+}
+
+.reset-copy{
+  color:#cfc6ef;
+  max-width:48ch;
+  margin:0 0 28px;
+}
+
+.reset-form{position:relative}
+
+.reset-fab{
+
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  width:74px;
+  height:74px;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#8b5cf6,#7c3aed);
+  color:#fff;
+  box-shadow:0 12px 32px rgba(139,92,246,.35);
+  cursor:pointer;
+  transition:transform .05s ease, filter .2s ease;
+  z-index:20;
+}
+.reset-fab:hover{filter:brightness(1.06)}
+.reset-fab:active{transform:translateY(1px)}
+.reset-fab:focus-visible{outline:3px solid rgba(139,92,246,.55); outline-offset:3px}
+
+
+.form-group{display:flex; flex-direction:column; gap:8px; width:min(520px,92vw)}
+.input{height:52px}

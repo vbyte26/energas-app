@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consulta DNI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img class="logo" src="logo.png" alt="Logo" />
+      <div class="links">
+        <a href="index.html">Login</a>
+        <a href="consulta.html" class="active">Consulta</a>
+        <a href="detalle.html">Detalle</a>
+        <a href="escanear.html">Escanear</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="perfil.html" class="active">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container consulta">
+    <div class="centered-content">
+      <h2>Consulta por DNI</h2>
+      <form class="dni-form card">
+        <div class="row cols-2">
+          <input type="text" placeholder="DNI" required />
+          <select required>
+            <option value="">Tipo</option>
+            <option>Natural</option>
+            <option>Jurídica</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full">Buscar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

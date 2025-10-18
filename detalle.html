@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img class="logo" src="logo.png" alt="Logo" />
+      <div class="links">
+        <a href="index.html">Login</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="detalle.html" class="active">Detalle</a>
+        <a href="escanear.html">Escanear</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="perfil.html" class="active">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="centered-content">
+      <h2>Detalle de registro</h2>
+      <form class="form-card card">
+        <div class="row cols-2">
+          <input type="text" placeholder="Nombre" />
+          <input type="text" placeholder="Apellido" />
+        </div>
+        <div class="row">
+          <input type="email" placeholder="Correo" />
+        </div>
+        <textarea rows="4" placeholder="Notas"></textarea>
+        <button type="submit" class="w-full">Guardar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

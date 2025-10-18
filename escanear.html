@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escanear</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img class="logo" src="logo.png" alt="Logo" />
+      <div class="links">
+        <a href="index.html">Login</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="detalle.html">Detalle</a>
+        <a href="escanear.html" class="active">Escanear</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="perfil.html" class="active">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="centered-content">
+      <h2>Escanear contrato</h2>
+      <input type="text" placeholder="Ingresa N° de Contrato" class="max-w-md w-full" />
+      <button id="startCamera" class="max-w-md w-full">Activar Cámara</button>
+      <video id="camera" autoplay playsinline muted></video>
+    </div>
+  </main>
+
+  <script>
+    const video = document.getElementById('camera');
+    const btn = document.getElementById('startCamera');
+    btn?.addEventListener('click', async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+        video.srcObject = stream;
+      } catch (e) {
+        alert('No se pudo acceder a la cámara');
+        console.error(e);
+      }
+    });
+  </script>
+</body>
+</html>
